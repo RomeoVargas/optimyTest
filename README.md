@@ -1,30 +1,24 @@
 # PHP test
 
-## Pre-requisites
+### Pre-requisites
 - vagrant installed and setup along with oracle VM
 
-## 1. Installation
+### 1. Installation
 - add the following line to hosts file 
     - 192.168.50.10 app.optimy.local
 - cd to directory where project is cloned
 - vagrant up
 - vagrant ssh
 - mysql -u root -p phptest < dbdump.sql
-
 ---
-
-## Bad Practices in Initial Code
-
+### Bad Practices in Initial Code
 - Following PSR-4 coding standards, the initial code does not have autoloading set-up
 - In the initial code, if you need to update method(s) from classes (entity classes and managers), you need to update each class individually (even if the change might probably be the same with classes under same category)
 - Each entity has a class with setter and getter methods for each attribute or property of that class. The problem lies when there are new attributes introduced to each class which makes the code for each setter and getter become cluttered in the future
 - Usage and declaration of class for the entity managers and entity classes are almost repetitive
 - Sensitive information (like db credentials) are clearly visible in code
-
 ---
-
-## Improvements Made
-
+### Improvements Made
 - Introduced autoloading and PSR-4 coding standards
 - Introduced using of environment variables
 - Introduced MVC
@@ -52,6 +46,3 @@
     - given the short time, I was only able to do basic unit tests for models for now
 - Introduced log file via htaccess
     - this is just for easy debugging
-
----
-
